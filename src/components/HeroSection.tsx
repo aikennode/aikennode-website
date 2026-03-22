@@ -78,8 +78,8 @@ const HeroSection = () => {
           >
             {[
               { icon: Github, href: "https://github.com/squirdev", label: "GitHub" },
-              { icon: Linkedin, href: "#", label: "LinkedIn" },
-              { icon: Mail, href: "mailto:talentdev610@gmail.com", label: "Email" },
+              // { icon: Linkedin, href: "#", label: "LinkedIn" },
+              { icon: Mail, href: "mailto:talentdev55555@gmail.com", label: "Email" },
             ].map(({ icon: Icon, href, label }) => (
               <a
                 key={label}
