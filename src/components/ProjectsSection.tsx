@@ -4,11 +4,11 @@ import { ExternalLink, Github } from "lucide-react";
 
 const projects = [
   {
-    title: "DeFi Yield Aggregator",
-    description: "A cross-chain yield optimization protocol on EVM chains with auto-compounding strategies and risk-adjusted returns.",
-    tags: ["Solidity", "React", "Hardhat", "TheGraph"],
+    title: "flash-launch.com",
+    description: "Token launch platform for fast, transparent project launches.",
+    tags: ["Next.js", "TypeScript", "Solana", "Web3"],
     color: "from-primary/20 to-accent/10",
-    link: "#",
+    link: "https://flash-launch.com",
     github: "#",
   },
   {
