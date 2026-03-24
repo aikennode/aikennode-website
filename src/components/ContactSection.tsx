@@ -23,7 +23,7 @@ const ContactSection = () => {
             Let's Build <span className="gradient-text">Together</span>
           </h2>
 
-          <p className="text-muted-foreground text-lg mb-16 max-w-xl">
+          <p className="text-muted-foreground text-lg mb-12 max-w-xl">
             Have a project in mind? Whether it's blockchain, AI, or full-stack — I'd love to hear about it.
           </p>
         </motion.div>
@@ -32,9 +32,9 @@ const ContactSection = () => {
           initial={{ opacity: 0, y: 24 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.08 }}
-          className="max-w-4xl mx-auto"
+          className="w-full max-w-4xl mx-auto"
         >
-          <div className="grid md:grid-cols-2 gap-12">
+          <div className="grid md:grid-cols-2 md:items-start gap-8 lg:gap-10">
             <div className="space-y-6">
               <div className="flex items-center gap-4 p-4 rounded-xl bg-card border border-border hover:border-primary/30 transition-colors">
                 <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary">

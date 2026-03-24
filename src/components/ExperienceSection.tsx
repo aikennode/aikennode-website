@@ -93,7 +93,7 @@ const ExperienceSection = () => {
           </h2>
         </motion.div>
 
-        <div className="max-w-3xl mx-auto space-y-0">
+        <div className="max-w-4xl mx-auto space-y-0">
           {experiences.map((exp, i) => (
             <motion.div
               key={`${exp.company}-${exp.period}`}
