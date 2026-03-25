@@ -1,6 +1,5 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { ExternalLink, Github } from "lucide-react";
 import flashLaunchThumb from "@/assets/flash-launch.png";
 import tvtFrontendThumb from "@/assets/tvt-frontend.png";
 import tokenTool from "@/assets/token-tool.png";
@@ -80,6 +79,8 @@ const projects = [
   },
 ];
 
+const isLiveProjectLink = (url: string) => url.startsWith("http://") || url.startsWith("https://");
+
 const ProjectsSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
@@ -103,24 +104,17 @@ const ProjectsSection = () => {
         </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-          {projects.map((project, i) => (
-            <motion.div
-              key={project.title}
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: 0.1 * i }}
-              className="group rounded-2xl bg-card border border-border hover:border-primary/40 transition-all duration-500 overflow-hidden flex flex-col"
-            >
-              <div
-                className={`h-40 flex items-center justify-center relative overflow-hidden ${project.image ? "" : `bg-gradient-to-br ${project.color}`
-                  }`}
-              >
+          {projects.map((project, i) => {
+            const live = isLiveProjectLink(project.link);
+            const shellClass = `h-40 flex items-center justify-center relative overflow-hidden shrink-0 ${project.image ? "" : `bg-gradient-to-br ${project.color}`}`;
+            const thumbnailInner = (
+              <>
                 {project.image ? (
                   <>
                     <img
                       src={project.image}
                       alt=""
-                      className="absolute inset-0 w-full h-full object-cover"
+                      className={`absolute inset-0 w-full h-full object-cover ${live ? "transition-transform duration-500 group-hover:scale-[1.03]" : ""}`}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-background/20 to-transparent pointer-events-none" />
                   </>
@@ -129,25 +123,30 @@ const ProjectsSection = () => {
                     {`0${i + 1}`}
                   </div>
                 )}
-                <div className="absolute top-4 right-4 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-8 h-8 rounded-lg bg-background/80 backdrop-blur-sm flex items-center justify-center text-muted-foreground hover:text-primary transition-colors"
-                  >
-                    <Github size={14} />
-                  </a>
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-8 h-8 rounded-lg bg-background/80 backdrop-blur-sm flex items-center justify-center text-muted-foreground hover:text-primary transition-colors"
-                  >
-                    <ExternalLink size={14} />
-                  </a>
-                </div>
-              </div>
+              </>
+            );
+
+            return (
+            <motion.div
+              key={project.title}
+              initial={{ opacity: 0, y: 30 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.5, delay: 0.1 * i }}
+              className="group rounded-2xl bg-card border border-border hover:border-primary/40 transition-all duration-500 overflow-hidden flex flex-col"
+            >
+              {live ? (
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`${shellClass} cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-inset`}
+                  aria-label={`Open ${project.title}`}
+                >
+                  {thumbnailInner}
+                </a>
+              ) : (
+                <div className={shellClass}>{thumbnailInner}</div>
+              )}
               <div className="p-6 flex flex-col flex-1">
                 <h3 className="text-lg font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
                   {project.title}
@@ -167,7 +166,8 @@ const ProjectsSection = () => {
                 </div>
               </div>
             </motion.div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
