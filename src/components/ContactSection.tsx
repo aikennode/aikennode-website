@@ -1,7 +1,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useState, type FormEvent } from "react";
 import { Loader2, Mail, MapPin, Github, Send } from "lucide-react";
-import { toast } from "sonner";
+import { toast } from "@/components/ui/sonner";
 
 const WEB3FORMS_URL = "https://api.web3forms.com/submit";
 
@@ -20,12 +20,16 @@ const ContactSection = () => {
     e.preventDefault();
 
     if (!name.trim() || !email.trim() || !message.trim()) {
-      toast.error("Please fill in your name, email, and message.");
+      toast.error("Missing information", {
+        description: "Please enter your name, email, and message before sending.",
+      });
       return;
     }
 
     if (!accessKey) {
-      toast.error("Contact form is not configured. Add VITE_WEB3FORMS_ACCESS_KEY to your .env file.");
+      toast.error("Form not configured", {
+        description: "Add VITE_WEB3FORMS_ACCESS_KEY to your .env file (see .env.example).",
+      });
       return;
     }
 
@@ -52,13 +56,17 @@ const ContactSection = () => {
         throw new Error(data.message || "Something went wrong.");
       }
 
-      toast.success("Message sent. I'll get back to you soon.");
+      toast.success("Message sent", {
+        description: "Thanks for reaching out — I'll reply as soon as I can.",
+      });
       setName("");
       setEmail("");
       setMessage("");
     } catch (err) {
       const text = err instanceof Error ? err.message : "Failed to send. Try again or email directly.";
-      toast.error(text);
+      toast.error("Could not send message", {
+        description: text,
+      });
     } finally {
       setIsSubmitting(false);
     }
