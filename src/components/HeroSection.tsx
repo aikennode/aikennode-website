@@ -77,9 +77,9 @@ const HeroSection = () => {
             className="flex items-center justify-center gap-5"
           >
             {[
-              { icon: Github, href: "https://github.com/squirdev", label: "GitHub" },
+              { icon: Github, href: "https://github.com/aichannode", label: "GitHub" },
               // { icon: Linkedin, href: "#", label: "LinkedIn" },
-              { icon: Mail, href: "mailto:aikennode@gmail.com", label: "Email" },
+              { icon: Mail, href: "mailto:aichannode@gmail.com", label: "Email" },
             ].map(({ icon: Icon, href, label }) => (
               <a
                 key={label}

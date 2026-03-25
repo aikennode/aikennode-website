@@ -42,8 +42,8 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <div className="text-sm text-muted-foreground">Email</div>
-                  <a href="mailto:aikennode@gmail.com" className="text-foreground hover:text-primary transition-colors font-medium">
-                    aikennode@gmail.com
+                  <a href="mailto:aichannode@gmail.com" className="text-foreground hover:text-primary transition-colors font-medium">
+                    aichannode@gmail.com
                   </a>
                 </div>
               </div>
@@ -60,7 +60,7 @@ const ContactSection = () => {
 
               <div className="flex gap-3 pt-4">
                 {[
-                  { icon: Github, href: "https://github.com/squirdev", label: "GitHub" },
+                  { icon: Github, href: "https://github.com/aichannode", label: "GitHub" },
                   // { icon: Linkedin, href: "#", label: "LinkedIn" },
                 ].map(({ icon: Icon, href, label }) => (
                   <a

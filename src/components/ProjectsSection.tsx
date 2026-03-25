@@ -15,7 +15,7 @@ const projects = [
     color: "from-primary/20 to-accent/10",
     image: flashLaunchThumb,
     link: "https://flash-launch.com",
-    github: "https://github.com/squirdev/Flash-Launch/",
+    github: "https://github.com/aichannode/Flash-Launch/",
   },
   {
     title: "TokenTool.io",
@@ -25,7 +25,7 @@ const projects = [
     color: "from-accent/15 to-primary/20",
     image: tokenTool,
     link: "https://www.tokentool.io/",
-    github: "https://github.com/squirdev/TokenTool",
+    github: "https://github.com/aichannode/TokenTool",
   },
   {
     title: "Solana NFT Marketplace",
@@ -50,7 +50,7 @@ const projects = [
     color: "from-accent/20 to-primary/10",
     image: tvtFrontendThumb,
     link: "https://tvt-front.vercel.app/",
-    github: "https://github.com/squirdev/TVT-Front",
+    github: "https://github.com/aichannode/TVT-Front",
   },
   {
     title: "RAG Knowledge Base",
@@ -76,7 +76,7 @@ const projects = [
     color: "from-primary/10 to-accent/20",
     image: circularRing,
     link: "https://play.google.com/store/apps/details?id=xyz.circular.circular&hl=en_US&pli=1",
-    github: "https://github.com/squirdev/circular-ring",
+    github: "https://github.com/aichannode/circular-ring",
   },
 ];
 
