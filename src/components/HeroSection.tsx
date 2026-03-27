@@ -1,14 +1,50 @@
 import { motion } from "framer-motion";
 import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
-import heroBg from "@/assets/hero-bg.jpg";
+import { useTheme } from "@/components/ThemeProvider";
+import { cn } from "@/lib/utils";
+import heroBgDark from "@/assets/hero-bg.jpg";
+import heroBgLight from "@/assets/hero-bg-light.jpg";
 
 const HeroSection = () => {
+  const { theme } = useTheme();
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background image with overlay */}
+      {/* Background: dark cyber (default) vs lighter art for light theme */}
       <div className="absolute inset-0 z-0">
-        <img src={heroBg} alt="" className="w-full h-full object-cover opacity-20" />
-        <div className="absolute inset-0 bg-gradient-to-b from-background via-background/80 to-background" />
+        <img
+          src={heroBgDark}
+          alt=""
+          aria-hidden
+          className={cn(
+            "absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-500",
+            theme === "dark" ? "opacity-[0.42] saturate-[1.08]" : "opacity-0",
+          )}
+        />
+        <img
+          src={heroBgLight}
+          alt=""
+          aria-hidden
+          className={cn(
+            "absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-500",
+            theme === "light" ? "opacity-[0.36] saturate-[1.06]" : "opacity-0",
+          )}
+        />
+        {/* Edge blend into page — keeps the art visible in the middle instead of a flat white slab */}
+        <div
+          className="absolute inset-0 bg-[linear-gradient(to_bottom,hsl(var(--background))_0%,transparent_24%,transparent_76%,hsl(var(--background))_100%)] pointer-events-none transition-opacity duration-500"
+          aria-hidden
+        />
+        {/* Soft radial behind headline for contrast without hiding the illustration */}
+        <div
+          className={cn(
+            "absolute inset-0 pointer-events-none transition-opacity duration-500",
+            theme === "light"
+              ? "bg-[radial-gradient(ellipse_85%_55%_at_50%_42%,hsl(var(--background)_/_0.38),transparent_68%)]"
+              : "bg-[radial-gradient(ellipse_85%_55%_at_50%_42%,hsl(var(--background)_/_0.45),transparent_68%)]",
+          )}
+          aria-hidden
+        />
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
