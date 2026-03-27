@@ -1,11 +1,9 @@
 import { createClient, type EntriesQueries } from "contentful";
+import { env } from "@/config/env";
 
-const spaceId = import.meta.env.VITE_CONTENTFUL_SPACE_ID;
-const accessToken = import.meta.env.VITE_CONTENTFUL_ACCESS_TOKEN;
-
-/** True when Delivery API credentials are present (see `.env.example`). */
+/** True when Delivery API credentials are present (see `.env.example` / Vercel env). */
 export function isContentfulConfigured(): boolean {
-  return Boolean(spaceId?.trim() && accessToken?.trim());
+  return Boolean(env.contentfulSpaceId && env.contentfulAccessToken);
 }
 
 /**
@@ -15,12 +13,12 @@ export function isContentfulConfigured(): boolean {
 export function getContentfulClient() {
   if (!isContentfulConfigured()) {
     throw new Error(
-      "Contentful is not configured. Add VITE_CONTENTFUL_SPACE_ID and VITE_CONTENTFUL_ACCESS_TOKEN to your .env file.",
+      "Contentful is not configured. Set VITE_CONTENTFUL_SPACE_ID and VITE_CONTENTFUL_ACCESS_TOKEN locally or in Vercel (see .env.example).",
     );
   }
   return createClient({
-    space: spaceId!,
-    accessToken: accessToken!,
+    space: env.contentfulSpaceId!,
+    accessToken: env.contentfulAccessToken!,
   });
 }
 

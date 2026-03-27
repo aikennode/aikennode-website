@@ -2,6 +2,7 @@ import { motion, useInView } from "framer-motion";
 import { useRef, useState, type FormEvent } from "react";
 import { Loader2, Mail, MapPin, Github, Send } from "lucide-react";
 import { toast } from "@/components/ui/sonner";
+import { env, isWeb3FormsConfigured } from "@/config/env";
 
 const WEB3FORMS_URL = "https://api.web3forms.com/submit";
 
@@ -14,8 +15,6 @@ const ContactSection = () => {
   const [message, setMessage] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY as string | undefined;
-
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
 
@@ -26,9 +25,12 @@ const ContactSection = () => {
       return;
     }
 
-    if (!accessKey) {
+    if (!isWeb3FormsConfigured()) {
       toast.error("Form not configured", {
-        description: "Add VITE_WEB3FORMS_ACCESS_KEY to your .env file (see .env.example).",
+        description:
+          import.meta.env.PROD
+            ? "Set VITE_WEB3FORMS_ACCESS_KEY in Vercel → Settings → Environment Variables, then redeploy."
+            : "Add VITE_WEB3FORMS_ACCESS_KEY to your .env file (see .env.example).",
       });
       return;
     }
@@ -42,7 +44,7 @@ const ContactSection = () => {
           Accept: "application/json",
         },
         body: JSON.stringify({
-          access_key: accessKey,
+          access_key: env.web3formsAccessKey,
           name: name.trim(),
           email: email.trim(),
           message: message.trim(),
