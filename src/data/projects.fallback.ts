@@ -1,0 +1,88 @@
+import type { PortfolioCard } from "@/lib/contentful-portfolio";
+import flashLaunchThumb from "@/assets/flash-launch.png";
+import tvtFrontendThumb from "@/assets/tvt-frontend.png";
+import tokenTool from "@/assets/token-tool.png";
+import circularRing from "@/assets/circular-ring.png";
+import aptosFamousFoxThumb from "@/assets/aptos-famous-fox.png";
+
+export type ProjectFallbackCard = PortfolioCard & {
+  link?: string;
+  color?: string;
+};
+
+export const projectsFallback: ProjectFallbackCard[] = [
+  {
+    id: "fallback-flash-launch",
+    title: "Flash Launch",
+    description:
+      "No-code decentralized launchpad for token creation, presales, and fair launches—with KYC and investor-focused tooling.",
+    skills: ["Next.js", "TypeScript", "Node.js", "EVM"],
+    color: "from-primary/20 to-accent/10",
+    image: flashLaunchThumb,
+    link: "https://flash-launch.com",
+  },
+  {
+    id: "fallback-token-tool",
+    title: "TokenTool.io",
+    description:
+      "Create and deploy ERC20 and Solana SPL tokens in minutes—EVM chains plus Solana, with Raydium liquidity tooling.",
+    skills: ["Next.js", "TypeScript", "Solana", "EVM"],
+    color: "from-accent/15 to-primary/20",
+    image: tokenTool,
+    link: "https://www.tokentool.io/",
+  },
+  {
+    id: "fallback-fff-aptos",
+    title: "Aptos — Famous Fox Federation",
+    description:
+      "Utility suite for Famous Fox Federation on Aptos—NFT mint, bulk send, peer-to-peer swap, bulk list/delist, and related NFT workflows.",
+    skills: ["Next.js", "TypeScript", "Aptos", "NFT"],
+    color: "from-accent/20 to-primary/10",
+    image: aptosFamousFoxThumb,
+    link: "https://aptos.famousfoxes.com/",
+  },
+  {
+    id: "fallback-ai-trading",
+    title: "AI Trading Assistant",
+    description:
+      "LLM-powered trading bot that analyzes on-chain data, sentiment, and technical indicators to provide actionable insights.",
+    skills: ["Python", "LangChain", "OpenAI", "Web3.py"],
+    color: "from-primary/20 to-primary/5",
+  },
+  {
+    id: "fallback-tvt",
+    title: "Track Verify Trust",
+    description:
+      "Blockchain-based supply chain tracking platform on Solana, enabling transparent product verification for consumers and businesses.",
+    skills: ["React", "TypeScript", "Material Tailwind"],
+    color: "from-accent/20 to-primary/10",
+    image: tvtFrontendThumb,
+    link: "https://tvt-front.vercel.app/",
+  },
+  {
+    id: "fallback-rag",
+    title: "RAG Knowledge Base",
+    description:
+      "Enterprise-grade RAG system with custom embeddings, multi-modal document processing, and conversational retrieval.",
+    skills: ["Python", "Pinecone", "FastAPI", "React"],
+    color: "from-primary/15 to-accent/15",
+  },
+  {
+    id: "fallback-bridge",
+    title: "Cross-Chain Bridge",
+    description:
+      "Trustless bridge protocol enabling asset transfers between EVM chains and Solana with optimistic verification.",
+    skills: ["Solidity", "Rust", "TypeScript", "Wormhole"],
+    color: "from-accent/15 to-primary/15",
+  },
+  {
+    id: "fallback-circular-ring",
+    title: "Circular Ring",
+    description:
+      "React Native mobile app—native UI and performance on iOS and Android from a single codebase.",
+    skills: ["React Native", "TypeScript", "Mobile"],
+    color: "from-primary/10 to-accent/20",
+    image: circularRing,
+    link: "https://play.google.com/store/apps/details?id=xyz.circular.circular&hl=en_US&pli=1",
+  },
+];

@@ -23,6 +23,10 @@ export const env = {
   contentfulExperiencesEntryId: optionalTrim(import.meta.env.VITE_CONTENTFUL_EXPERIENCES_ENTRY_ID),
   /** Parent content type ID in Contentful (default: `experiences`). */
   contentfulCtExperiences: optionalTrim(import.meta.env.VITE_CONTENTFUL_CT_EXPERIENCES),
+  /** Optional: published parent `portfolios` entry ID — skips name query when set. */
+  contentfulPortfoliosEntryId: optionalTrim(import.meta.env.VITE_CONTENTFUL_PORTFOLIOS_ENTRY_ID),
+  /** Parent content type ID in Contentful (default: `portfolios`). */
+  contentfulCtPortfolios: optionalTrim(import.meta.env.VITE_CONTENTFUL_CT_PORTFOLIOS),
 } as const;
 
 export function isWeb3FormsConfigured(): boolean {
