@@ -12,7 +12,7 @@ import {
 import { cn } from "@/lib/utils";
 import { getProjectGalleryUrls } from "@/utils/project-gallery";
 
-const MEDIA_HEIGHT = "h-[min(26rem,48vh)]";
+const MEDIA_HEIGHT = "h-[min(34rem,54vh)]";
 
 type LazyModalImageProps = {
   src: string;
@@ -72,7 +72,7 @@ function LazyModalImage({ src, placeholderSrc, priority = false, className }: La
         decoding="async"
         fetchPriority={priority ? "high" : "low"}
         className={cn(
-          "relative z-[3] block h-full w-full object-cover object-center transition-opacity duration-500",
+          "relative z-[3] block h-full w-full object-fill object-center transition-opacity duration-500",
           status === "loaded" ? "opacity-100" : "opacity-0",
           className,
         )}

@@ -126,8 +126,12 @@ const ExperienceSection = () => {
                 key={exp.id}
                 initial={{ opacity: 0, y: 28, x: -16 }}
                 whileInView={{ opacity: 1, y: 0, x: 0 }}
-                viewport={{ once: false, amount: 0.35, margin: "0px 0px -12% 0px" }}
-                transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+                viewport={{
+                  once: false,
+                  amount: 0.22,
+                  margin: "0px 0px -70px 0px",
+                }}
+                transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1] }}
                 className="relative grid grid-cols-[12rem_1fr] gap-x-8 pb-12 last:pb-0 group"
               >
                 <div className="flex w-full justify-end pt-1.5 pr-0">
@@ -136,8 +140,8 @@ const ExperienceSection = () => {
                 <div className="relative min-w-0">
                   <div
                     className={`absolute top-3 left-[calc(-1*theme(spacing.8)/2)] -translate-x-1/2 w-3 h-3 rounded-full border-2 transition-colors duration-300 z-10 ${exp.current
-                        ? "bg-primary border-primary box-glow"
-                        : "bg-background border-muted-foreground group-hover:border-primary"
+                      ? "bg-primary border-primary box-glow"
+                      : "bg-background border-muted-foreground group-hover:border-primary"
                       }`}
                   />
                   <div className="p-6 rounded-xl bg-card border border-border transition-all duration-500 group-hover:border-primary/30">
