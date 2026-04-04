@@ -92,8 +92,10 @@ const ExperienceSection = () => {
                 <div className="relative min-w-0">
                   <div className="absolute top-3 left-[calc(-1*theme(spacing.8)/2)] -translate-x-1/2 w-3 h-3 rounded-full bg-muted border-2 border-border z-10" />
                   <div className="p-6 rounded-xl bg-card border border-border space-y-3">
-                    <div className="h-5 bg-muted rounded w-2/3" />
-                    <div className="h-4 bg-muted/80 rounded w-1/2" />
+                    <div className="flex flex-wrap items-center gap-3">
+                      <div className="h-5 bg-muted rounded w-40 max-w-[55%]" />
+                      <div className="h-4 bg-muted/80 rounded w-28" />
+                    </div>
                     <div className="h-16 bg-muted/60 rounded w-full" />
                   </div>
                 </div>
@@ -133,22 +135,21 @@ const ExperienceSection = () => {
                 </div>
                 <div className="relative min-w-0">
                   <div
-                    className={`absolute top-3 left-[calc(-1*theme(spacing.8)/2)] -translate-x-1/2 w-3 h-3 rounded-full border-2 transition-colors duration-300 z-10 ${
-                      exp.current
+                    className={`absolute top-3 left-[calc(-1*theme(spacing.8)/2)] -translate-x-1/2 w-3 h-3 rounded-full border-2 transition-colors duration-300 z-10 ${exp.current
                         ? "bg-primary border-primary box-glow"
                         : "bg-background border-muted-foreground group-hover:border-primary"
-                    }`}
+                      }`}
                   />
                   <div className="p-6 rounded-xl bg-card border border-border transition-all duration-500 group-hover:border-primary/30">
-                    <div className="flex flex-wrap items-center gap-3 mb-3">
+                    <div className="mb-4 flex flex-wrap items-center gap-x-3 gap-y-1.5">
                       <h3 className="text-lg font-bold text-foreground">{exp.role}</h3>
+                      <span className="text-sm font-semibold text-primary">{exp.company}</span>
                       {exp.current && (
                         <span className="px-2.5 py-0.5 rounded-full bg-primary/10 text-primary text-xs font-mono border border-primary/20">
                           Current
                         </span>
                       )}
                     </div>
-                    <p className="text-primary font-semibold text-sm mb-4">{exp.company}</p>
                     <p className="text-muted-foreground text-sm leading-relaxed">{exp.summary}</p>
                   </div>
                 </div>

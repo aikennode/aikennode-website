@@ -54,14 +54,6 @@ export const projectsFallback: ProjectFallbackCard[] = [
     link: "https://tvt-front.vercel.app/",
   },
   {
-    id: "fallback-bridge",
-    title: "Cross-Chain Bridge",
-    description:
-      "Trustless bridge protocol enabling asset transfers between EVM chains and Solana with optimistic verification.",
-    skills: ["Solidity", "Rust", "TypeScript", "Wormhole"],
-    color: "from-accent/15 to-primary/15",
-  },
-  {
     id: "fallback-circular-ring",
     title: "Circular Ring",
     description:
