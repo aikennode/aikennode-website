@@ -75,7 +75,7 @@ const HeroSection = () => {
             <span className="text-foreground">Hi, I'm </span>
             <span className="gradient-text">{firstName}</span>
             <br />
-            <span className="text-foreground text-4xl md:text-5xl lg:text-6xl">{role}</span>
+            <span className="text-foreground text-3xl md:text-4xl lg:text-5xl">{role}</span>
           </motion.h1>
 
           <motion.p
