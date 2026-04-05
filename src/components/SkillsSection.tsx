@@ -54,10 +54,9 @@ const skillCategories = [
     title: "AI / LLM",
     icon: "🧠",
     skills: [
-      "Python",
       "LangChain (LangGraph, LangSmith)",
-      "Prompt Engineering",
       "RAG",
+      "Prompt Engineering",
       "Vector DBs",
       "Fine-tuning",
       "MCP",
