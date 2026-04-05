@@ -50,7 +50,7 @@ export function ProjectDetailModal({
             <div className="flex min-h-0 flex-1 flex-col overflow-hidden">
               {/* Only title + description scroll; short height — skills + actions stay fixed below */}
               <div className="min-h-0 max-h-[min(22vh,9rem)] shrink-0 overflow-y-auto overflow-x-hidden bg-background sm:max-h-[min(20vh,9.5rem)]">
-                <div className="space-y-1.5 px-3 pt-2.5 pb-2 sm:px-4 sm:pt-3">
+                <div className="space-y-1.5 px-3 pt-3 pb-2 sm:px-4 sm:pt-3">
                   <DialogHeader className="space-y-1.5 text-left">
                     <DialogTitle className="text-lg font-bold leading-tight sm:text-xl">
                       {project.title}

@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
+import { ArrowDown } from "lucide-react";
 import { useTheme } from "@/components/ThemeProvider";
 import { cn } from "@/lib/utils";
 import heroBgDark from "@/assets/hero-bg.jpg";
@@ -104,29 +104,6 @@ const HeroSection = () => {
             >
               Get In Touch
             </a>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-            className="flex items-center justify-center gap-5"
-          >
-            {[
-              { icon: Github, href: "https://github.com/aichannode", label: "GitHub" },
-              // { icon: Linkedin, href: "#", label: "LinkedIn" },
-              { icon: Mail, href: "mailto:aichannode@gmail.com", label: "Email" },
-            ].map(({ icon: Icon, href, label }) => (
-              <a
-                key={label}
-                href={href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-11 h-11 rounded-lg border border-border flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary transition-all duration-300"
-              >
-                <Icon size={18} />
-              </a>
-            ))}
           </motion.div>
         </div>
       </div>

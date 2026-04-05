@@ -1,9 +1,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useState, type FormEvent } from "react";
-import { Loader2, Mail, MapPin, Github, Send, Linkedin } from "lucide-react";
+import { Loader2, Mail, MapPin, Send } from "lucide-react";
 import { toast } from "@/components/ui/sonner";
-import { DiscordIcon, TelegramIcon } from "@/components/icons/BrandSocialIcons";
-import { SOCIAL_URLS } from "@/constants/social";
 import { env, isWeb3FormsConfigured } from "@/config/env";
 
 const WEB3FORMS_URL = "https://api.web3forms.com/submit";
@@ -128,26 +126,6 @@ const ContactSection = () => {
                 </div>
               </div>
 
-              <div className="flex flex-wrap gap-3 pt-4">
-                {[
-                  { icon: Linkedin, href: SOCIAL_URLS.linkedin, label: "LinkedIn" },
-                  { icon: Mail, href: SOCIAL_URLS.gmail, label: "Gmail" },
-                  { icon: TelegramIcon, href: SOCIAL_URLS.telegram, label: "Telegram" },
-                  { icon: DiscordIcon, href: SOCIAL_URLS.discord, label: "Discord" },
-                  { icon: Github, href: SOCIAL_URLS.github, label: "GitHub" },
-                ].map(({ icon: Icon, href, label }) => (
-                  <a
-                    key={label}
-                    href={href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={label}
-                    className="w-11 h-11 rounded-lg border border-border flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary transition-all duration-300"
-                  >
-                    <Icon size={18} />
-                  </a>
-                ))}
-              </div>
             </div>
 
             <form onSubmit={handleSubmit} className="space-y-4">
