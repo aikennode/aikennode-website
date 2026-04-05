@@ -3,6 +3,22 @@ import { useRef } from "react";
 
 const skillCategories = [
   {
+    title: "Programming Languages",
+    icon: "💻",
+    skills: [
+      "JavaScript",
+      "TypeScript",
+      "Python",
+      "Rust",
+      "Java",
+      "SQL",
+      "NoSQL",
+      "Go",
+      "Swift",
+      "Kotlin"
+    ],
+  },
+  {
     title: "Frontend",
     icon: "🎨",
     skills: [
@@ -38,25 +54,7 @@ const skillCategories = [
     ],
   },
   {
-    title: "Integration & APIs",
-    icon: "🔌",
-    skills: [
-      "REST & GraphQL",
-      "OpenAPI",
-      "WebSockets",
-      "Webhooks",
-      "OAuth2 / JWT",
-      "Microservices",
-      "Event-driven design",
-      "Stripe",
-      "Integration testing",
-      "Postman",
-      "API versioning",
-      "Rate limiting & caching",
-    ],
-  },
-  {
-    title: "AI / LLM Systems",
+    title: "AI / LLM",
     icon: "🧠",
     skills: [
       "Python",
