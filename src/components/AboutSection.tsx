@@ -26,7 +26,7 @@ const AboutSection = () => {
             <span className="text-primary font-mono text-sm tracking-wider uppercase">About Me</span>
           </div>
           <h2 className="text-3xl md:text-5xl font-bold mb-8 text-foreground">
-            Building <span className="gradient-text">Products That Ship</span>
+            A Bit <span className="gradient-text">About How I Work</span>
           </h2>
         </motion.div>
 
@@ -37,29 +37,20 @@ const AboutSection = () => {
           className="max-w-5xl mx-auto"
         >
           <div className="grid md:grid-cols-2 gap-12 mb-16">
-            <div className="space-y-5 text-muted-foreground leading-relaxed">
-              <p>
-                I'm a full stack and AI engineer who cares about clear architecture, maintainable code,
-                and products people actually use. Currently at <span className="text-primary font-semibold">RadCrew</span>,
-                I build features across the stack — from APIs and data layers to polished UIs — and ship
-                LLM-powered experiences where they add real value.
-              </p>
-              <p>
-                I enjoy owning problems end to end: discovery, implementation, observability, and iteration.
-                That mix of product sense and engineering depth is what keeps me excited about the work.
-              </p>
-            </div>
-            <div className="space-y-5 text-muted-foreground leading-relaxed">
-              <p>
-                On the AI side, I've worked with RAG, prompt design, guardrails, and production LLM APIs —
-                always with an eye on latency, cost, and reliability. On the application side, I'm
-                comfortable in TypeScript-heavy frontends, Node services, and cloud-native deployments.
-              </p>
-              <p>
-                When I'm not shipping code, I'm reading about new model capabilities, developer tooling,
-                and better ways to test and ship software.
-              </p>
-            </div>
+            <p className="text-muted-foreground leading-relaxed">
+              I'm a full stack and AI engineer who cares about clear architecture, maintainable code, and
+              products people actually use. Currently at <span className="text-primary font-semibold">RadCrew</span>,
+              I build features across the stack — from APIs and data layers to polished UIs — and ship
+              LLM-powered experiences where they add real value. I enjoy owning problems end to end:
+              discovery, implementation, observability, and iteration.
+            </p>
+            <p className="text-muted-foreground leading-relaxed">
+              On the AI side, I've worked with RAG, prompt design, guardrails, and production LLM APIs —
+              always with an eye on latency, cost, and reliability. On the application side, I'm comfortable
+              in TypeScript-heavy frontends, Node services, and cloud-native deployments. When I'm not
+              shipping code, I'm reading about new model capabilities, developer tooling, and better ways
+              to test and ship software.
+            </p>
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">

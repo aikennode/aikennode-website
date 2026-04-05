@@ -82,13 +82,12 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed"
+            className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-10 leading-relaxed"
           >
-            I’m a <span className="text-foreground font-medium">full stack</span> and{" "}
-            <span className="text-accent">AI</span> engineer — shipping products end to end, from
-            backends and APIs to interfaces and <span className="text-primary">LLM</span>-powered
-            features. I focus on reliable systems, great UX, and shipping fast. Currently at{" "}
-            <span className="text-foreground font-semibold">RadCrew</span>.
+            I care about{" "}
+            <span className="text-foreground font-medium">clear architecture</span>, great{" "}
+            <span className="text-primary">UX</span>, and shipping often — especially where{" "}
+            <span className="text-accent">AI</span> meets real product constraints.
           </motion.p>
 
           <motion.div
