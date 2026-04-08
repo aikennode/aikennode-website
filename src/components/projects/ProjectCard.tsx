@@ -51,7 +51,7 @@ export function ProjectCard({ project, index, isInView, defaultGradient, onOpenD
           <img
             src={project.image}
             alt=""
-            className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+            className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover/thumb:scale-[1.03]"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-background/20 to-transparent pointer-events-none" />
         </>
@@ -76,8 +76,24 @@ export function ProjectCard({ project, index, isInView, defaultGradient, onOpenD
         className="flex flex-col flex-1 w-full cursor-pointer text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-inset rounded-2xl"
         aria-label={`View details: ${project.title}`}
       >
-        <div className={shellClass}>
+        <div className={`${shellClass} group/thumb`}>
           {thumbnail}
+          {liveLink && project.link ? (
+            <div className="absolute inset-0 z-20 translate-y-full bg-background/80 backdrop-blur-sm transition-transform duration-300 ease-out group-hover/thumb:translate-y-0 group-focus-within/thumb:translate-y-0">
+              <div className="flex h-full w-full items-center justify-center">
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-lg border border-primary/45 bg-background/95 px-4 py-2 text-sm font-semibold text-foreground shadow-sm transition-colors hover:border-primary hover:text-primary"
+                  aria-label={`Open ${project.title} in a new tab`}
+                >
+                  Explore Project
+                  <ArrowUpRight className="h-4 w-4" strokeWidth={2.25} />
+                </a>
+              </div>
+            </div>
+          ) : null}
           {!liveLink ? (
             <span className={`${arrowClassName} pointer-events-none`} aria-hidden>
               <ArrowUpRight className="h-4 w-4" strokeWidth={2.25} />
@@ -86,17 +102,6 @@ export function ProjectCard({ project, index, isInView, defaultGradient, onOpenD
         </div>
         {body}
       </button>
-      {liveLink && project.link ? (
-        <a
-          href={project.link}
-          target="_blank"
-          rel="noopener noreferrer"
-          className={`${arrowClassName} z-20`}
-          aria-label={`Open ${project.title} in a new tab`}
-        >
-          <ArrowUpRight className="h-4 w-4" strokeWidth={2.25} />
-        </a>
-      ) : null}
     </motion.div>
   );
 }
