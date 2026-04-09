@@ -15,13 +15,16 @@ const HeroSection = () => {
   const role = profile.role?.trim() || socialProfileFallback.role!;
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
       {/* Background: dark cyber (default) vs lighter art for light theme */}
       <div className="absolute inset-0 z-0">
         <img
           src={heroBgDark}
           alt=""
           aria-hidden
+          loading="eager"
+          decoding="async"
+          fetchPriority="high"
           className={cn(
             "absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-500",
             theme === "dark" ? "opacity-[0.42] saturate-[1.08]" : "opacity-0",
@@ -31,6 +34,8 @@ const HeroSection = () => {
           src={heroBgLight}
           alt=""
           aria-hidden
+          loading="eager"
+          decoding="async"
           className={cn(
             "absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-500",
             theme === "light" ? "opacity-[0.36] saturate-[1.06]" : "opacity-0",
@@ -56,7 +61,7 @@ const HeroSection = () => {
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={false}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
@@ -67,7 +72,7 @@ const HeroSection = () => {
           </motion.div>
 
           <motion.h1
-            initial={{ opacity: 0, y: 30 }}
+            initial={false}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.15 }}
             className="text-5xl md:text-7xl lg:text-8xl font-bold leading-tight mb-6"
@@ -79,7 +84,7 @@ const HeroSection = () => {
           </motion.h1>
 
           <motion.p
-            initial={{ opacity: 0, y: 30 }}
+            initial={false}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
             className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed"
@@ -91,7 +96,7 @@ const HeroSection = () => {
           </motion.p>
 
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={false}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.45 }}
             className="flex items-center justify-center gap-4 mb-12"
@@ -113,7 +118,7 @@ const HeroSection = () => {
       </div>
 
       <motion.div
-        initial={{ opacity: 0 }}
+        initial={false}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.2, duration: 1 }}
         className="absolute bottom-10 left-1/2 -translate-x-1/2"
