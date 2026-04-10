@@ -9,7 +9,7 @@ const Footer = () => {
 
   return (
     <footer className="border-t border-border py-5">
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto">
         <div className="flex flex-col items-center gap-3 sm:flex-row sm:items-center sm:justify-between sm:gap-3">
           <p className="text-center text-xs text-muted-foreground sm:text-left sm:text-sm">
             © {year} <span className="text-primary">{ownerName}</span>. All rights reserved.

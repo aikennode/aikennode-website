@@ -1,4 +1,4 @@
-import { createClient, type EntriesQueries } from "contentful";
+import { createClient, type EntriesQueries, type EntrySkeletonType } from "contentful";
 import { env } from "@/config/env";
 
 /** True when Delivery API credentials are present (see `.env.example` / Vercel env). */
@@ -13,7 +13,7 @@ export function isContentfulConfigured(): boolean {
 export function getContentfulClient() {
   if (!isContentfulConfigured()) {
     throw new Error(
-      "Contentful is not configured. Set VITE_CONTENTFUL_SPACE_ID and VITE_CONTENTFUL_ACCESS_TOKEN locally or in Vercel (see .env.example).",
+      "Contentful is not configured. Set NEXT_PUBLIC_CONTENTFUL_SPACE_ID and NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN locally or in Vercel (see .env.example).",
     );
   }
   return createClient({
@@ -22,7 +22,7 @@ export function getContentfulClient() {
   });
 }
 
-export type FetchEntriesParams = Omit<EntriesQueries, "content_type"> & {
+export type FetchEntriesParams = Omit<EntriesQueries<EntrySkeletonType, undefined>, "content_type"> & {
   /** Content type ID from Contentful (e.g. `blogPost`). */
   contentType: string;
 };

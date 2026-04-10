@@ -7,13 +7,16 @@ export default {
   theme: {
     container: {
       center: true,
-      padding: "2rem",
+      /* 1.5rem = Tailwind `px-6` — avoids relying on utility-vs-component cascade order across bundlers */
+      padding: "1.5rem",
       screens: {
         "2xl": "1400px",
       },
     },
     extend: {
       fontFamily: {
+        /* Preflight applies `theme("fontFamily.sans")` on `html` — keep it aligned with body/display */
+        sans: ['"Space Grotesk"', "system-ui", "sans-serif"],
         display: ['"Space Grotesk"', 'system-ui', 'sans-serif'],
         body: ['"Space Grotesk"', 'system-ui', 'sans-serif'],
         mono: ['"JetBrains Mono"', 'monospace'],

@@ -13,7 +13,7 @@ function contentfulGraphqlUrl(): string {
 function assertConfigured() {
   if (!isContentfulConfigured()) {
     throw new Error(
-      "Contentful is not configured. Set VITE_CONTENTFUL_SPACE_ID and VITE_CONTENTFUL_ACCESS_TOKEN locally or in Vercel (see .env.example).",
+      "Contentful is not configured. Set NEXT_PUBLIC_CONTENTFUL_SPACE_ID and NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN locally or in Vercel (see .env.example).",
     );
   }
 }
