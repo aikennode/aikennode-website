@@ -56,7 +56,7 @@ const ExperienceSection = () => {
 
   return (
     <section id="experience" className="py-32 relative overflow-x-clip" ref={ref}>
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -104,14 +104,14 @@ const ExperienceSection = () => {
 
           {!showSkeleton && source === "empty" && (
             <p className="text-muted-foreground text-sm max-w-xl md:pl-[calc(12rem+theme(spacing.8))]">
-              {import.meta.env.DEV ? (
+              {process.env.NODE_ENV === "development" ? (
                 <>
                   No experience entries returned from Contentful. Confirm the parent content type ID (default{" "}
                   <code className="font-mono text-xs">experiences</code>), field{" "}
                   <code className="font-mono text-xs">name</code> (or localized{" "}
                   <code className="font-mono text-xs">en-US</code>) is <code className="font-mono text-xs">aichannode</code>,{" "}
                   <code className="font-mono text-xs">items</code> references are published, or set{" "}
-                  <code className="font-mono text-xs">VITE_CONTENTFUL_EXPERIENCES_ENTRY_ID</code>.
+                  <code className="font-mono text-xs">NEXT_PUBLIC_CONTENTFUL_EXPERIENCES_ENTRY_ID</code>.
                 </>
               ) : (
                 <>Experience content will appear here once published in Contentful.</>

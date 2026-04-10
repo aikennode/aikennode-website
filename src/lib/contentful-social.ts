@@ -1,7 +1,7 @@
 import { env } from "@/config/env";
 import { requestContentfulGraphql } from "@/lib/contentful-graphql";
 
-/** Matches `social.name` in Contentful — defaults to `VITE_CONTENTFUL_OWNER_NAME`. */
+/** Matches `social.name` in Contentful — defaults to `NEXT_PUBLIC_CONTENTFUL_OWNER_NAME`. */
 export const CONTENTFUL_SOCIAL_NAME = env.contentfulOwnerName ?? "aichannode";
 
 export const CONTENT_TYPE_SOCIAL = "social";

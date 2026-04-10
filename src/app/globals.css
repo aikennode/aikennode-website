@@ -112,7 +112,8 @@
   }
 
   body {
-    @apply bg-background text-foreground font-body antialiased;
+    /* Duplicates layout.tsx for non-JS; keeps typography aligned with Tailwind `fontFamily.sans` / `font-body` */
+    @apply m-0 bg-background text-foreground font-body antialiased;
   }
 
   h1, h2, h3, h4, h5, h6 {
