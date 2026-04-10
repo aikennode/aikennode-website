@@ -33,9 +33,9 @@ const ContactSection = () => {
     if (!isWeb3FormsConfigured()) {
       toast.error("Form not configured", {
         description:
-          import.meta.env.PROD
-            ? "Set VITE_WEB3FORMS_ACCESS_KEY in Vercel → Settings → Environment Variables, then redeploy."
-            : "Add VITE_WEB3FORMS_ACCESS_KEY to your .env file (see .env.example).",
+          process.env.NODE_ENV === "production"
+            ? "Set NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY in Vercel → Settings → Environment Variables, then redeploy."
+            : "Add NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY to your .env file (see .env.example).",
       });
       return;
     }

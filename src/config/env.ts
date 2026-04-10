@@ -1,12 +1,12 @@
 /**
- * Client-side environment (Vite embeds these at build time — not read at runtime from a .env file on the server).
+ * Client-side public environment (Next.js inlines `NEXT_PUBLIC_*` for the browser bundle).
  *
  * Vercel: Project → Settings → Environment Variables
- * - Names must match exactly (including the VITE_ prefix).
+ * - Use the `NEXT_PUBLIC_` names below.
  * - Enable for "Production" and "Preview" as needed.
- * - Redeploy after adding or changing variables (Build must see them).
+ * - Redeploy after adding or changing variables.
  *
- * @see https://vitejs.dev/guide/env-and-mode.html
+ * @see https://nextjs.org/docs/app/building-your-application/configuring/environment-variables
  */
 
 function optionalTrim(v: string | undefined): string | undefined {
@@ -16,23 +16,23 @@ function optionalTrim(v: string | undefined): string | undefined {
 }
 
 export const env = {
-  web3formsAccessKey: optionalTrim(import.meta.env.VITE_WEB3FORMS_ACCESS_KEY),
-  contentfulSpaceId: optionalTrim(import.meta.env.VITE_CONTENTFUL_SPACE_ID),
-  contentfulAccessToken: optionalTrim(import.meta.env.VITE_CONTENTFUL_ACCESS_TOKEN),
+  web3formsAccessKey: optionalTrim(process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY),
+  contentfulSpaceId: optionalTrim(process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID),
+  contentfulAccessToken: optionalTrim(process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN),
   /** Owner name used to filter parent `experiences`/`portfolios` entries (default: aichannode). */
-  contentfulOwnerName: optionalTrim(import.meta.env.VITE_CONTENTFUL_OWNER_NAME),
+  contentfulOwnerName: optionalTrim(process.env.NEXT_PUBLIC_CONTENTFUL_OWNER_NAME),
   /** Optional: published parent `experiences` entry ID — skips name query when set. */
-  contentfulExperiencesEntryId: optionalTrim(import.meta.env.VITE_CONTENTFUL_EXPERIENCES_ENTRY_ID),
+  contentfulExperiencesEntryId: optionalTrim(process.env.NEXT_PUBLIC_CONTENTFUL_EXPERIENCES_ENTRY_ID),
   /** Parent content type ID in Contentful (default: `experiences`). */
-  contentfulCtExperiences: optionalTrim(import.meta.env.VITE_CONTENTFUL_CT_EXPERIENCES),
+  contentfulCtExperiences: optionalTrim(process.env.NEXT_PUBLIC_CONTENTFUL_CT_EXPERIENCES),
   /** Optional: published parent `portfolios` entry ID — skips name query when set. */
-  contentfulPortfoliosEntryId: optionalTrim(import.meta.env.VITE_CONTENTFUL_PORTFOLIOS_ENTRY_ID),
+  contentfulPortfoliosEntryId: optionalTrim(process.env.NEXT_PUBLIC_CONTENTFUL_PORTFOLIOS_ENTRY_ID),
   /** Parent content type ID in Contentful (default: `portfolios`). */
-  contentfulCtPortfolios: optionalTrim(import.meta.env.VITE_CONTENTFUL_CT_PORTFOLIOS),
+  contentfulCtPortfolios: optionalTrim(process.env.NEXT_PUBLIC_CONTENTFUL_CT_PORTFOLIOS),
   /** Optional: published `social` entry ID — skips name query when set. */
-  contentfulSocialEntryId: optionalTrim(import.meta.env.VITE_CONTENTFUL_SOCIAL_ENTRY_ID),
+  contentfulSocialEntryId: optionalTrim(process.env.NEXT_PUBLIC_CONTENTFUL_SOCIAL_ENTRY_ID),
   /** Content type ID for the social profile (default: `social`). */
-  contentfulCtSocial: optionalTrim(import.meta.env.VITE_CONTENTFUL_CT_SOCIAL),
+  contentfulCtSocial: optionalTrim(process.env.NEXT_PUBLIC_CONTENTFUL_CT_SOCIAL),
 } as const;
 
 export function isWeb3FormsConfigured(): boolean {

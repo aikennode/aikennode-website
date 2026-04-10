@@ -1,3 +1,5 @@
+"use client";
+
 import ParticleField from "@/components/ParticleField";
 import Globe from "@/components/Globe";
 import Navbar from "@/components/Navbar";
@@ -11,7 +13,7 @@ import EducationSection from "@/components/EducationSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 
-const Index = () => {
+export default function HomePage() {
   return (
     <div className="min-h-screen bg-background grid-bg">
       <SiteDocumentHead />
@@ -30,6 +32,4 @@ const Index = () => {
       <Footer />
     </div>
   );
-};
-
-export default Index;
+}

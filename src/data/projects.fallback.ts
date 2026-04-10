@@ -18,8 +18,8 @@ export const projectsFallback: ProjectFallbackCard[] = [
       "No-code decentralized launchpad for token creation, presales, and fair launches—with KYC and investor-focused tooling.",
     skills: ["Next.js", "TypeScript", "Node.js", "EVM"],
     color: "from-primary/20 to-accent/10",
-    image: flashLaunchThumb,
-    images: [tokenTool, aptosFamousFoxThumb],
+    image: flashLaunchThumb.src,
+    images: [tokenTool.src, aptosFamousFoxThumb.src],
     link: "https://flash-launch.com",
   },
   {
@@ -29,7 +29,7 @@ export const projectsFallback: ProjectFallbackCard[] = [
       "Create and deploy ERC20 and Solana SPL tokens in minutes—EVM chains plus Solana, with Raydium liquidity tooling.",
     skills: ["Next.js", "TypeScript", "Solana", "EVM"],
     color: "from-accent/15 to-primary/20",
-    image: tokenTool,
+    image: tokenTool.src,
     link: "https://www.tokentool.io/",
   },
   {
@@ -39,7 +39,7 @@ export const projectsFallback: ProjectFallbackCard[] = [
       "Utility suite for Famous Fox Federation on Aptos—NFT mint, bulk send, peer-to-peer swap, bulk list/delist, and related NFT workflows.",
     skills: ["Next.js", "TypeScript", "Aptos", "NFT"],
     color: "from-accent/20 to-primary/10",
-    image: aptosFamousFoxThumb,
+    image: aptosFamousFoxThumb.src,
     link: "https://aptos.famousfoxes.com/",
   },
   {
@@ -49,8 +49,8 @@ export const projectsFallback: ProjectFallbackCard[] = [
       "Blockchain-based supply chain tracking platform on Solana, enabling transparent product verification for consumers and businesses.",
     skills: ["React", "TypeScript", "Material Tailwind"],
     color: "from-accent/20 to-primary/10",
-    image: tvtFrontendThumb,
-    images: [flashLaunchThumb, circularRing],
+    image: tvtFrontendThumb.src,
+    images: [flashLaunchThumb.src, circularRing.src],
     link: "https://tvt-front.vercel.app/",
   },
   {
@@ -60,7 +60,7 @@ export const projectsFallback: ProjectFallbackCard[] = [
       "React Native mobile app—native UI and performance on iOS and Android from a single codebase.",
     skills: ["React Native", "TypeScript", "Mobile"],
     color: "from-primary/10 to-accent/20",
-    image: circularRing,
+    image: circularRing.src,
     link: "https://play.google.com/store/apps/details?id=xyz.circular.circular&hl=en_US&pli=1",
   },
 ];

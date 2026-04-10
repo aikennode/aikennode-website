@@ -19,7 +19,7 @@ const HeroSection = () => {
       {/* Background: dark cyber (default) vs lighter art for light theme */}
       <div className="absolute inset-0 z-0">
         <img
-          src={heroBgDark}
+          src={heroBgDark.src}
           alt=""
           aria-hidden
           loading="eager"
@@ -31,7 +31,7 @@ const HeroSection = () => {
           )}
         />
         <img
-          src={heroBgLight}
+          src={heroBgLight.src}
           alt=""
           aria-hidden
           loading="eager"

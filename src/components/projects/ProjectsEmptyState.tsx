@@ -1,7 +1,7 @@
 export function ProjectsEmptyState() {
   return (
     <p className="text-muted-foreground text-sm max-w-2xl md:col-span-2 lg:col-span-3">
-      {import.meta.env.DEV ? (
+      {process.env.NODE_ENV === "development" ? (
         <>
           No portfolio entries returned from Contentful. Confirm parent content type{" "}
           <code className="font-mono text-xs">portfolios</code>, field{" "}
